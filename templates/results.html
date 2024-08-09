@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Planner</title>
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+<h1>Travel Planner</h1>
+<p>Search Results:</p>
+
+<div class="row">
+<div class="col-md-4">
+<h3>Flights</h3>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th>Departure</th>
+<th>Arrival</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+{% for flight in flights %}
+<tr>
+<td>{{ flight.origin }}</td>
+<td>{{ flight.destination }}</td>
+<td>{{ flight.departure_date }}</td>
+<td>{{ flight.arrival_date }}</td>
+<td>{{ flight.price }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<div class="col-md-4">
+<h3>Hotels</h3>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Name</th>
+<th>Location</th>
+<th>Price</th>
+<th>Stars</th>
+</tr>
+</thead>
+<tbody>
+{% for hotel in hotels %}
+<tr>
+<td>{{ hotel.name }}</td>
+<td>{{ hotel.location }}</td>
+<td>{{ hotel.price }}</td>
+<td>{{ hotel.stars }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<div class="col-md-4">
+<h3>Activities</h3>
+<ul class="list-group">
+{% for activity in activities %}
+<li class="list-group-item">{{ activity.name }}</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
